@@ -1,0 +1,13 @@
+.signupform {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    /* margin: 0 200px; */
+  }
+  
+  .signupform > * {
+    width: 100%;
+  }
+  .alert-danger{
+      color:rgb(161, 0, 0);
+  }

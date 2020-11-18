@@ -1,0 +1,68 @@
+.addproducts{
+    margin-top:10px;
+}
+h3{
+    color: darkcyan;
+}
+th{
+    color: darkmagenta;
+}
+td{
+    color: blue;
+}
+label{
+    color: crimson;
+}
+button{
+    color: rgb(4, 93, 182);
+}
+
+.productactive
+{
+    color:red;
+}
+
+.actionbuttons button,a
+{
+  margin-right: 8px;
+}
+.actionbuttons{
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.search-bar{
+    font-size: small;
+    float: center;
+}
+.selectproduct{
+    float:left;
+}
+
+ /* For removing blue border while clicking on a mat-card div  */
+:focus {
+    outline:0 !important;
+}
+/* Adding box-shadow effect to mat-card */
+.productmatcard{
+    margin-bottom: 20px;
+    box-shadow: 5px 10px 15px #c7c6c6d7;
+}
+
+/* Styles for product list */
+.heading{
+    font-size: 30px;
+    color: rebeccapurple;
+}
+.subheading{
+    font-size: 18px;
+    padding: 4px;
+    color:darkgreen;
+}
+.matlist{
+    float: unset;
+    height: 130px;
+    padding: 0px;
+    margin-top: 0px;
+}

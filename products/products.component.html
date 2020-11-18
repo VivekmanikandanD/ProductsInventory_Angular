@@ -1,0 +1,45 @@
+<h3>Products List </h3>
+
+<div>
+  <mat-form-field class="search-bar">
+    <input matInput placeholder="Search"  [(ngModel)]="nameFilter">
+  </mat-form-field>
+
+  <mat-accordion class="expansionpanel">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+           Show/Hide Fields
+          </mat-panel-title>
+          <mat-panel-description>
+           Option to show/hide fields in the displayed products 
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <mat-list class="matlist">
+            <mat-list-item> <mat-checkbox (change)="true" #prodnamecheckbox [checked]= "showproductname">Product Name</mat-checkbox> </mat-list-item>
+            <mat-list-item> <mat-checkbox (change)="true" #prodpricecheckbox [checked]= "showproductprice">Product Price</mat-checkbox> </mat-list-item>
+            <mat-list-item> <mat-checkbox (change)="true" #prodmanufacturercheckbox [checked]= "showproductmanufacturer">Product Manufacturer</mat-checkbox> </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+ 
+</div>
+
+<div class="actionbuttons">
+    <button mat-raised-button color="accent" (click)="updateProduct()" *ngIf="needupdatebtn">Update</button>
+    <button mat-raised-button color="warn" (click)="deleteProduct()" *ngIf="needdeletebtn">Delete</button>
+    <a mat-raised-button color="primary" routerLink="addproduct" *ngIf="needaddbtn">Add</a>
+</div>
+
+
+<mat-card *ngFor="let p of products | productFilter: nameFilter; last as last " matRipple class="productmatcard">
+  <span mat-card-avatar class="selectproduct"><mat-checkbox (change)="showOptions($event.checked,p)"></mat-checkbox></span>
+  <div [routerLink]="p.id">
+      <div class="heading" *ngIf="prodnamecheckbox.checked">{{p.productname}}</div>
+      <div class="subheading" *ngIf="prodpricecheckbox.checked">Price: {{p.productprice |currency }}</div>
+      <div class="subheading" *ngIf="prodmanufacturercheckbox.checked">Manufacturer: {{p.productmanufacturer}}</div>
+     <!--  <mat-divider *ngIf="!last"></mat-divider> -->
+  </div>
+</mat-card>
+

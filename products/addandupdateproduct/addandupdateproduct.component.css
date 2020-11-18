@@ -1,0 +1,18 @@
+.addandupdateproductform {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    /* margin: 0 200px; */
+    margin-left: 30%;
+    margin-top: 3%;
+    width: 60%;
+    margin-right: 40%;
+  }
+  
+  .addandupdateproductform > * {
+    width: 70%;
+    
+  }
+  .alert-danger{
+      color:rgb(161, 0, 0);
+  }

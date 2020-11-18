@@ -1,0 +1,12 @@
+<mat-toolbar>Products Details</mat-toolbar>
+
+<mat-card>
+    <mat-card-title class="heading">{{productsobj.productname}}</mat-card-title>
+    <mat-card-subtitle class="subheading">Price: {{productsobj.productprice |currency}}</mat-card-subtitle>
+    <mat-card-content class="subheading">Description: {{productsobj.productdescription}}</mat-card-content>
+    <mat-card-subtitle class="subheading">Manufacturer: {{productsobj.productmanufacturer}}</mat-card-subtitle>
+    <mat-card-subtitle class="subheading">Quantity: {{productsobj.productquantity}}</mat-card-subtitle>
+</mat-card>
+
+<button mat-flat-button color="accent" (click)="goBack()">Back</button>
+

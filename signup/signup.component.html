@@ -1,0 +1,76 @@
+<mat-toolbar>Signup</mat-toolbar>
+
+<form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+<div class="signupform">
+    <mat-form-field>
+        <input matInput placeholder="Email Id" name="emailid" [(ngModel)]="signupobj.EmailID" required  #emailIdRef="ngModel" type="email">
+        <div *ngIf="emailIdRef.invalid && (emailIdRef.dirty || emailIdRef.touched)" class="alert-danger">
+            <div *ngIf="emailIdRef.errors.required">
+                Email Id is required.
+            </div>
+            
+        </div>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Password" name="password" [(ngModel)]="signupobj.Password" required minlength="6" #passwordRef="ngModel" type="password">
+        <div *ngIf="passwordRef.invalid && (passwordRef.dirty || passwordRef.touched)" class="alert-danger">
+            <div *ngIf="passwordRef.errors.required">
+                Password is required.
+            </div>
+            <div *ngIf="passwordRef.errors.minlength">
+                Password must be at least 6 characters long.
+            </div>
+        </div>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="First Name" name="firstname" [(ngModel)]="signupobj.Firstname" required minlength="5" #firstNameRef="ngModel">
+        <div *ngIf="firstNameRef.invalid && (firstNameRef.dirty || firstNameRef.touched)" class="alert-danger">
+                <div *ngIf="firstNameRef.errors.required">
+                    First Name is required.
+                </div>
+                <div *ngIf="firstNameRef.errors.minlength">
+                    First Name must be at least 5 characters long.
+                </div>
+        </div>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Last Name" name="lastname" [(ngModel)]="signupobj.Lastname" required minlength="5" #lastNameRef="ngModel">
+        <div *ngIf="lastNameRef.invalid && (lastNameRef.dirty || lastNameRef.touched)" class="alert-danger">
+                <div *ngIf="lastNameRef.errors.required">
+                    Last Name is required.
+                </div>
+                <div *ngIf="lastNameRef.errors.minlength">
+                    Last Name must be at least 1 character long.
+                </div>
+        </div>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Location" name="location" [(ngModel)]="signupobj.Location" required minlength="5" #locationRef="ngModel">
+        <div *ngIf="locationRef.invalid && (locationRef.dirty || locationRef.touched)" class="alert-danger">
+                <div *ngIf="locationRef.errors.required">
+                    Location is required.
+                </div>
+                <div *ngIf="locationRef.errors.minlength">
+                    Location must be at least 5 characters long.
+                </div>
+        </div>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Mobile Number" type="number" name="mobilenumber" [(ngModel)]="signupobj.MobileNumber" required  maxlength="10" #mobileNumberRef="ngModel">
+        <div *ngIf="mobileNumberRef.invalid && (mobileNumberRef.dirty || mobileNumberRef.touched)" class="alert-danger">
+                <div *ngIf="mobileNumberRef.errors.required">
+                    Mobile Number is required.
+                </div>
+                <div *ngIf="mobileNumberRef.errors.maxlength">
+                    Mobile Number must not be more than 10 characters long.
+                </div>
+        </div>
+    </mat-form-field>
+</div>
+
+<button type="submit" mat-flat-button color="primary"  [disabled]="formRef.invalid">Save</button>
+</form>

@@ -1,0 +1,43 @@
+
+<!-- <mat-toolbar>Products Inventory Management</mat-toolbar>
+<nav>
+  <a  style="padding-right:20px" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">About</a>
+  <a routerLink="products" routerLinkActive="active">Products</a>
+</nav> -->
+
+<!-- ------------------ -->
+<div style="height: 100vh;"> 
+  <mat-toolbar color="primary" style="height:70px;">
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <a mat-button class="companyName" routerLink="/">
+        <span>Products Inventory Management</span>
+      </a>
+      <span class="example-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+        <a mat-button routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">About</a>
+        <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
+        <a mat-button routerLink="/myprofile" routerLinkActive="active">My Profile</a>
+        <a mat-button routerLink="/login" routerLinkActive="active" *ngIf="!isLoggedIn()">Login & Signup</a>
+        <button mat-button (click)="logout()" *ngIf="isLoggedIn()">Logout</button>
+        <a mat-button routerLink="/topviewedproducts">Top Viewed Products</a>
+      </div>
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill class="example-container">
+      <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+        <div fxLayout="column">
+          <a mat-button routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">About</a>
+          <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
+          <a mat-button routerLink="/login" routerLinkActive="active" *ngIf="!isLoggedIn()">Login & Signup</a> 
+          <button mat-button (click)="logout()" *ngIf="isLoggedIn()">Logout</button>
+          <a mat-button routerLink="/topviewedproducts">Top Viewed Products</a>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content fxFlexFill>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

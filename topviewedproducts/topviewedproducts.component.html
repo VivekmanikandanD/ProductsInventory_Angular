@@ -1,0 +1,23 @@
+<mat-toolbar>Top Viewed Products</mat-toolbar>
+<mat-form-field class="topviewedselectbox">
+    <mat-select placeholder="Select" (selectionChange)="customizetopviewedproducts($event.value)" >
+        <mat-option value="top3">Top 3</mat-option>
+        <mat-option value="top5">Top 5</mat-option>
+        <mat-option value="top10">Top 10</mat-option>
+    </mat-select>
+</mat-form-field>
+      
+<div>
+    <div>
+        <div style="display: block">
+        <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [legend]="barChartLegend"
+            [chartType]="barChartType" #topviewedchart>
+        </canvas>
+        </div>
+    </div>
+</div>

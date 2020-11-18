@@ -1,0 +1,18 @@
+h4.prodname{
+    color:rgb(84, 98, 105);
+}
+h4 span{
+    color: black;
+}
+.heading{
+    color:rebeccapurple;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.subheading{
+    color:forestgreen;
+    padding:4px;
+    font-size: 18px;
+    text-align: start;
+    margin: 5px;
+}

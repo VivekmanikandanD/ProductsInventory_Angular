@@ -1,0 +1,40 @@
+<mat-toolbar>Login</mat-toolbar>
+
+
+  <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+    <div class="loginform">
+        <mat-form-field>
+          <input matInput placeholder="Email Id" name="emailid" [(ngModel)]="loginobj.EmailID" required  #emailIdRef="ngModel">
+          <div *ngIf="emailIdRef.invalid && (emailIdRef.dirty || emailIdRef.touched)" class="alert-danger">
+              <div *ngIf="emailIdRef.errors.required">
+                  Email Id is required.
+              </div>
+              
+          </div>
+      </mat-form-field>
+    
+      <mat-form-field>
+          <input matInput placeholder="Password" name="password" [(ngModel)]="loginobj.Password" required minlength="3" #passwordRef="ngModel" type="password"> 
+          <div *ngIf="passwordRef.invalid && (passwordRef.dirty || passwordRef.touched)" class="alert-danger">
+              <div *ngIf="passwordRef.errors.required">
+                  Password is required.
+              </div>
+              <div *ngIf="passwordRef.errors.minlength">
+                  Password must be at least 3 characters long.
+              </div>
+          </div>
+      </mat-form-field>
+    </div>
+    
+    <button type="submit" mat-flat-button color="primary"  [disabled]="formRef.invalid">Login</button>
+    <button mat-flat-button color="accent" (click)="signup()">Signup</button>
+    
+    <div>
+        <button mat-flat-button color="warn" (click)="goBack()">Back</button>
+    </div>
+    
+    </form>   
+
+
+
+

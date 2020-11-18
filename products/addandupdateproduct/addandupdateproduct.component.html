@@ -1,0 +1,68 @@
+<mat-toolbar>{{ typeofform }} Product</mat-toolbar>
+
+<form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+<div class="addandupdateproductform">
+    <mat-form-field>
+        <input matInput placeholder="Product Name" name="productname" [(ngModel)]="productsobj.productname" required minlength="3" #nameRef="ngModel">
+        <div *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)" class="alert-danger">
+            <div *ngIf="nameRef.errors.required">
+                Product Name is required.
+            </div>
+            <div *ngIf="nameRef.errors.minlength">
+                Product Name must be at least 3 characters long.
+            </div>
+        </div>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput placeholder="Product Description" name="productdescription" [(ngModel)]="productsobj.productdescription" required minlength="15" #descriptionRef="ngModel"></textarea>
+        <div *ngIf="descriptionRef.invalid && (descriptionRef.dirty || descriptionRef.touched)" class="alert-danger">
+            <div *ngIf="descriptionRef.errors.required">
+                Product Description is required.
+            </div>
+            <div *ngIf="descriptionRef.errors.minlength">
+                Product Description must be at least 15 characters long.
+            </div>
+        </div>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Product Manufacturer" name="productmanufacturer" [(ngModel)]="productsobj.productmanufacturer" required minlength="5" #manufacturerRef="ngModel">
+        <div *ngIf="manufacturerRef.invalid && (manufacturerRef.dirty || manufacturerRef.touched)" class="alert-danger">
+                <div *ngIf="manufacturerRef.errors.required">
+                    Product Manufacturer is required.
+                </div>
+                <div *ngIf="manufacturerRef.errors.minlength">
+                    Product Manufacturer must be at least 5 characters long.
+                </div>
+        </div>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Product Price" type="number" name="productprice" [(ngModel)]="productsobj.productprice" required minlength="1" #priceRef="ngModel">
+        <span matPrefix>$&nbsp;</span>
+        <div *ngIf="priceRef.invalid && (priceRef.dirty || priceRef.touched)" class="alert-danger">
+                <div *ngIf="priceRef.errors.required">
+                    Product Price is required.
+                </div>
+                <div *ngIf="priceRef.errors.minlength">
+                    Product Price must be at least 1 character long.
+                </div>
+        </div>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Product Quantity" type="number" name="productquantity" [(ngModel)]="productsobj.productquantity" required minlength="1" #quantityRef="ngModel">
+        <div *ngIf="quantityRef.invalid && (quantityRef.dirty || quantityRef.touched)" class="alert-danger">
+                <div *ngIf="quantityRef.errors.required">
+                    Product Quantity is required.
+                </div>
+                <div *ngIf="quantityRef.errors.minlength">
+                    Product Quantity must be at least 1 character long.
+                </div>
+        </div>
+    </mat-form-field>
+</div>
+
+<button type="submit" mat-flat-button color="primary"  [disabled]="formRef.invalid">{{saveorupdatebutton}}</button>
+</form>

@@ -1,0 +1,16 @@
+.loginform {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    /* margin: 0 200px; */
+  }
+  
+  .loginform > * {
+    width: 100%;
+  }
+  .alert-danger{
+      color:rgb(161, 0, 0);
+  }
+  button{
+    margin-left: 10px;
+  }

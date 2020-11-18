@@ -1,0 +1,23 @@
+.aboutdiv{
+    font-size: 17px;
+}
+.aboutcontent{
+    float:left;
+}
+
+.example-card {
+    width: 100%;
+    height: 100%;
+  }
+  
+.options{
+    float: unset;
+    padding: 9px;
+}
+.notediv{
+    margin-top:10px;
+    margin-right:20px;
+}
+.abouttitle{
+    color: rebeccapurple;
+}

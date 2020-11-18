@@ -1,0 +1,63 @@
+{
+  "products": [
+    {
+      "productname": "Nokia Edge",
+      "productdescription":"",
+      "productmanufacturer":"Nokia",
+      "productprice":"40000",
+      "productquantity": "5",
+      "id": 1
+    },
+    {
+      "productname": "Samsung Note 10",
+      "productdescription":"",
+      "productmanufacturer":"Samsung",
+      "productprice":"70000",
+      "productquantity": "6",
+      "id": 2
+    },
+    {
+      "productname": "Redmi Note 7 Pro",
+      "productdescription":"",
+      "productmanufacturer":"Xiaomi",
+      "productprice":"13999",
+      "productquantity": "3",
+      "id": 3
+    },
+    {
+      "productname": "IPhone X",
+      "productdescription":"",
+      "productmanufacturer":"Apple",
+      "productprice":"80000",
+      "productquantity": "4",
+      "id": 4
+    },
+    {
+      "productname": "Google Pixel",
+      "productdescription":"",
+      "productmanufacturer":"Google",
+      "productprice":"45000",
+      "productquantity": "2",
+      "id": 5
+    }
+  ],
+
+  "usercredentials":[
+    {
+      "EmailId":"xyz@abc.com",
+      "Password":"xyz",
+      "FirstName":"xyz",
+      "LastName":"xyz",
+      "Location":"xyz",
+      "MobileNumber":"123456"
+    },
+    {
+      "EmailId":"apple@fruit.com",
+      "Password":"apple",
+      "FirstName":"xyz",
+      "LastName":"xyz",
+      "Location":"xyz",
+      "MobileNumber":"123456"
+    }
+  ]
+}
